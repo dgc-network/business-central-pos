@@ -19,13 +19,13 @@ if (!class_exists('pos_users')) {
             $output .= '<div>美式咖啡 x 1</div>';
             $output .= '</div>';
             $output .= '<div style="border:1px solid; height:475px; margin:2px; width:66%; display:flex;">';
-            $output .= '<div style="border:1px solid; height:120px; margin:2px; width:100px;">';
+            $output .= '<div style="border:1px solid; height:130px; margin:2px; width:100px;">';
             $output .= '<img src="https://kfcoosfs.kfcclub.com.tw/%E5%92%94%E5%95%A6%E9%9B%9E%E8%85%BF%E5%A0%A120220518-pc.jpg" alt="卡拉雞腿堡" width="100" height="100"/>';
-            $output .= '<div style="text-align:center">卡拉雞腿堡</div>';
+            $output .= '<div style="text-align:center; font-size:small;">卡拉雞腿堡</div>';
             $output .= '</div>';
-            $output .= '<div style="border:1px solid; height:120px; margin:2px; width:100px;">';
+            $output .= '<div style="border:1px solid; height:130px; margin:2px; width:100px;">';
             $output .= '<img src="https://i.epochtimes.com/assets/uploads/2020/02/coffee-difference_317687987-600x400.jpg" alt="美式咖啡" width="100" height="100"/>';
-            $output .= '<div style="text-align:center">美式咖啡</div>';
+            $output .= '<div style="text-align:center; font-size:small;">美式咖啡</div>';
             $output .= '</div>';
             $output .= '</div>';
             $output .= '</div>';
