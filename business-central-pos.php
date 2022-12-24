@@ -43,8 +43,8 @@ function enqueue_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_scripts' );
 
-require_once plugin_dir_path( __FILE__ ) . 'includes/class-pos-orders.php';
-require_once plugin_dir_path( __FILE__ ) . 'includes/class-pos-users.php';
+require_once plugin_dir_path( __FILE__ ) . 'includes/class-sales-orders.php';
+require_once plugin_dir_path( __FILE__ ) . 'includes/class-pos-customers.php';
 /*
 require_once plugin_dir_path( __FILE__ ) . 'line-bot-sdk-tiny/LINEBotTiny.php';
 require_once plugin_dir_path( __FILE__ ) . 'includes/class-line-webhook.php';

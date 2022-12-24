@@ -3,8 +3,8 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-if (!class_exists('pos_users')) {
-    class pos_users {
+if (!class_exists('pos_customers')) {
+    class pos_customers {
         /**
          * Class constructor
          */
@@ -12,7 +12,7 @@ if (!class_exists('pos_users')) {
             $this->create_tables();
         }
 
-        public function list_pos_users() {
+        public function list_pos_customers() {
             global $wpdb;
             //$curtain_service = new curtain_service();
             //$curtain_agents = new curtain_agents();
@@ -189,14 +189,14 @@ if (!class_exists('pos_users')) {
             }
         }
 
-        public function update_pos_users($data=[], $where=[]) {
+        public function update_pos_customers($data=[], $where=[]) {
             global $wpdb;
             $table = $wpdb->prefix.'curtain_users';
             $data['update_timestamp'] = time();
             $wpdb->update($table, $data, $where);
         }
 
-        public function delete_pos_users($where=[]) {
+        public function delete_pos_customers($where=[]) {
             global $wpdb;
             $table = $wpdb->prefix.'curtain_users';
             $wpdb->delete($table, $where);
@@ -217,13 +217,13 @@ if (!class_exists('pos_users')) {
 
         public function get_id( $_id=0 ) {
             global $wpdb;
-            $row = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM {$wpdb->prefix}pos_users WHERE pos_user_id = %d OR line_user_id = %s", $_id, $_id ), OBJECT );
+            $row = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM {$wpdb->prefix}pos_customers WHERE pos_user_id = %d OR line_user_id = %s", $_id, $_id ), OBJECT );
             return $row->line_user_id;
         }
 
         public function get_name( $_id=0 ) {
             global $wpdb;
-            $row = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM {$wpdb->prefix}pos_users WHERE pos_user_id = %d OR line_user_id = %s", $_id, $_id ), OBJECT );
+            $row = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM {$wpdb->prefix}pos_customers WHERE pos_user_id = %d OR line_user_id = %s", $_id, $_id ), OBJECT );
             return $row->display_name;
         }
 
@@ -232,7 +232,7 @@ if (!class_exists('pos_users')) {
             $charset_collate = $wpdb->get_charset_collate();
             require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
 
-            $sql = "CREATE TABLE {$wpdb->prefix}pos_users (
+            $sql = "CREATE TABLE {$wpdb->prefix}pos_customers (
                 pos_user_id int NOT NULL AUTO_INCREMENT,
                 line_user_id varchar(50) UNIQUE,
                 display_name varchar(50),
@@ -297,8 +297,8 @@ if (!class_exists('pos_users')) {
             wp_enqueue_script( 'custom-curtain-users', plugin_dir_url( __DIR__ ) . 'assets/js/custom-curtain-users.js', array( 'jquery' ), time(), true );
         }
     }
-    $my_class = new pos_users();
-    add_shortcode( 'pos-user-list', array( $my_class, 'list_pos_users' ) );
+    $my_class = new pos_customers();
+    add_shortcode( 'pos-user-list', array( $my_class, 'list_pos_customers' ) );
     add_action( 'wp_ajax_send_chat', array( $my_class, 'send_chat' ) );
     add_action( 'wp_ajax_nopriv_send_chat', array( $my_class, 'send_chat' ) );
                 

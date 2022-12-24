@@ -3,8 +3,8 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-if (!class_exists('order_items')) {
-    class order_items {
+if (!class_exists('sales_orders')) {
+    class sales_orders {
         /**
          * Class constructor
          */
@@ -402,7 +402,7 @@ if (!class_exists('order_items')) {
             wp_die();
         }
     }
-    $my_class = new order_items();
+    $my_class = new sales_orders();
     add_shortcode( 'pos-form', array( $my_class, 'pos_form' ) );
     add_shortcode( 'order-item-list', array( $my_class, 'list_order_items' ) );
     add_action( 'wp_ajax_select_category_id', array( $my_class, 'select_category_id' ) );
