@@ -13,7 +13,9 @@ if (!class_exists('pos_users')) {
         }
 
         public function pos_form() {
-            $output = '<div style="border:3px solid; height=500px">';
+            $output = '<div style="border:10px solid; height:500px;">';
+            $output .= '<div style="border:1px solid; height:475px; margin:2px; width=33%">';
+            $output .= '</div>';
             $output .= '</div>';
             return $output;
         }
