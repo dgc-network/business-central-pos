@@ -1,11 +1,15 @@
-.chatbox {
+.pos-box {
 	position: fixed;
 	position:expression("absolute");
-	width: 225px;
-	display:none;
+	/*width: 225px;*/
+	/*display:none;*/
+	/*style="border:10px solid; height:700px; display:flex;"*/
+	border:20px solid;
+	height:700px;
+	display:flex;
 }
 
-.chatboxhead {
+.pos-box-head {
 	background-color: #f99d39;
 	padding:7px;
 	color: #ffffff;
@@ -14,13 +18,13 @@
 	border-left:1px solid #f99d39;
 }
 
-.chatboxblink {
+.pos-box-blink {
 	background-color: #176689;
 	border-right:1px solid #176689;
 	border-left:1px solid #176689;
 }
 
-.chatboxcontent {
+.pos-box-content {
 	font-family: arial,sans-serif;
 	font-size: 13px;
 	color: #333333;
@@ -36,7 +40,7 @@
 	line-height: 1.3em;
 }
 
-.chatboxinput {
+.pos-box-input {
 	padding: 5px;
 	background-color: #ffffff;
 	border-left:1px solid #cccccc;
@@ -44,7 +48,7 @@
 	border-bottom:1px solid #cccccc;
 }
 
-.chatboxtextarea {
+.pos-box-textarea {
 	font-size: 13px;
 	width: 245px;
 	height:28px;
@@ -54,15 +58,15 @@
 	overflow:hidden;
 }
 
-.chatboxtextareaselected {
+.pos-box-textarea-selected {
 	border: 2px solid #f99d39;
 	margin:0;
 }
 /*
-.chatboxmessage {
+.posboxmessage {
 }
 */
-.chatboxinfo {
+.pos-box-info {
 	background-color: chartreuse;
 	color: #333333;
 	display: inline-block; 
@@ -73,18 +77,18 @@
 	margin: 2px;
 }
 
-.chatboxmessagetime {
+.pos-box-message-time {
 	color:#666666;
 	display: inline-block; 
 	width:fit-content; 
 	font-size: xx-small;
 }
 
-.chatboxmessagefrom {
+.pos-box-message-from {
 	font-weight: bold;
 }
 
-.chatboxmessagecontent {
+.pos-box-message-content {
 	background-color: #666666;
 	color: #eeeeee;
 	display: inline-block; 
@@ -95,17 +99,17 @@
 	margin: 2px;
 }
 
-.chatboxoptions {
+.pos-box-options {
 	float: right;
 }
 
-.chatboxoptions a {
+.pos-box-options a {
 	text-decoration: none;
 	color: white;
 	font-weight:bold;
 	font-family:Verdana,Arial,"Bitstream Vera Sans",sans-serif;
 }
 
-.chatboxtitle {
+.pos-box-title {
 	float: left;
 }
