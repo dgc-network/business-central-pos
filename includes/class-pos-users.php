@@ -12,26 +12,6 @@ if (!class_exists('pos_users')) {
             $this->create_tables();
         }
 
-        public function pos_form() {
-            $output = '<div style="border:10px solid; height:700px; display:flex;">';
-            $output .= '<div style="border:1px solid; height:694px; margin:2px; width:33%;">';
-            $output .= '<div>卡拉雞腿堡 x 1</div>';
-            $output .= '<div>美式咖啡 x 1</div>';
-            $output .= '</div>';
-            $output .= '<div style="border:1px solid; height:694px; margin:2px; width:66%; display:flex;">';
-            $output .= '<div style="border:1px solid; height:130px; margin:2px; width:100px;">';
-            $output .= '<img src="https://kfcoosfs.kfcclub.com.tw/%E5%92%94%E5%95%A6%E9%9B%9E%E8%85%BF%E5%A0%A120220518-pc.jpg" alt="卡拉雞腿堡" width="100" height="100"/>';
-            $output .= '<div style="text-align:center; font-size:small;">卡拉雞腿堡</div>';
-            $output .= '</div>';
-            $output .= '<div style="border:1px solid; height:130px; margin:2px; width:100px;">';
-            $output .= '<img src="https://i.epochtimes.com/assets/uploads/2020/02/coffee-difference_317687987-600x400.jpg" alt="美式咖啡" width="100" height="100"/>';
-            $output .= '<div style="text-align:center; font-size:small;">美式咖啡</div>';
-            $output .= '</div>';
-            $output .= '</div>';
-            $output .= '</div>';
-            return $output;
-        }
-
         public function list_pos_users() {
             global $wpdb;
             //$curtain_service = new curtain_service();
@@ -319,7 +299,6 @@ if (!class_exists('pos_users')) {
     }
     $my_class = new pos_users();
     add_shortcode( 'pos-user-list', array( $my_class, 'list_pos_users' ) );
-    add_shortcode( 'pos-form', array( $my_class, 'pos_form' ) );
     add_action( 'wp_ajax_send_chat', array( $my_class, 'send_chat' ) );
     add_action( 'wp_ajax_nopriv_send_chat', array( $my_class, 'send_chat' ) );
                 
