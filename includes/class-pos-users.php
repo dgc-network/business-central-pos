@@ -13,10 +13,14 @@ if (!class_exists('pos_users')) {
         }
 
         public function pos_form() {
-            $output = '<div style="border:10px solid; height:500px;">';
-            $output .= '<div style="border:1px solid; height:475px; margin:2px; width=33%">';
+            $output = '<div style="border:10px solid; height:500px; display:flex;">';
+            $output .= '<div style="border:1px solid; height:475px; margin:2px; width:33%;">';
+            $output .= '<div>卡拉雞腿堡 x 1</div>';
+            $output .= '<div>美式咖啡 x 1</div>';
             $output .= '</div>';
-            $output .= '<div style="border:1px solid; height:475px; margin:2px; width=66%">';
+            $output .= '<div style="border:1px solid; height:475px; margin:2px; width:66%; display:flex;">';
+            $output .= '<div style="border:1px solid; height:50px; margin:2px; width:50px;>卡拉雞腿堡</div>';
+            $output .= '<div style="border:1px solid; height:50px; margin:2px; width:50px;>美式咖啡</div>';
             $output .= '</div>';
             $output .= '</div>';
             return $output;
