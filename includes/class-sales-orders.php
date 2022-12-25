@@ -14,7 +14,7 @@ if (!class_exists('sales_orders')) {
 
         public function pos_form() {
             $output = '<div class="pos-box">';
-            $output .= '<div style="border:1px solid; height:694px; margin:2px; width:25%;">';
+            $output .= '<div class="pos-box-content">';
             $output .= '<div>卡拉雞腿堡 x 1</div>';
             $output .= '<div>美式咖啡 x 1</div>';
             $output .= '</div>';

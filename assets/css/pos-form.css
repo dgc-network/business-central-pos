@@ -1,12 +1,14 @@
 .pos-box {
 	position: fixed;
-	position:expression("absolute");
+	/*position:expression("absolute");*/
 	/*width: 225px;*/
 	/*display:none;*/
 	/*style="border:10px solid; height:700px; display:flex;"*/
-	border:20px solid;
+	border:10px solid;
 	height:700px;
 	display:flex;
+	top: 0;
+	left: 0;
 }
 
 .pos-box-head {
@@ -28,8 +30,8 @@
 	font-family: arial,sans-serif;
 	font-size: 13px;
 	color: #333333;
-	height:450px;
-	width:258px;
+	/*height:450px;
+	width:258px;*/
 	overflow-y:auto;
 	overflow-x:auto;
 	padding:7px;
@@ -38,6 +40,9 @@
 	border-bottom:1px solid #eeeeee;
 	background-color: #ffffff;
 	line-height: 1.3em;
+	/*style="border:1px solid; height:694px; margin:2px; width:25%;"*/
+	height:694px; 
+	width:25%;
 }
 
 .pos-box-input {
