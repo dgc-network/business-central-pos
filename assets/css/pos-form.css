@@ -1,5 +1,7 @@
 .pos-box {
-	position: fixed;
+	/*position: fixed;
+	top: 0;
+	left: 0;*/
 	/*position:expression("absolute");*/
 	/*width: 225px;*/
 	/*display:none;*/
@@ -7,8 +9,6 @@
 	border:10px solid;
 	height:700px;
 	display:flex;
-	top: 0;
-	left: 0;
 }
 
 .pos-box-head {
