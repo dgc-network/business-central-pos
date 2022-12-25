@@ -51,19 +51,22 @@
 	border-left:1px solid #cccccc;
 	border-right:1px solid #cccccc;
 	border-bottom:1px solid #cccccc;
+	/*style="border:1px solid; height:694px; margin:2px; width:75%; display:flex;"*/
+	display: flex;
 }
 
-.pos-box-textarea {
+.pos-box-image {
 	font-size: 13px;
-	width: 245px;
-	height:28px;
+	width: 100px;
+	height:130px;
 	padding:3px 0pt 3px 3px;
 	border: 1px solid #eeeeee;
 	margin: 1px;
 	overflow:hidden;
+	/*style="border:1px solid; height:130px; margin:2px; width:100px;"*/
 }
 
-.pos-box-textarea-selected {
+.pos-box-image-selected {
 	border: 2px solid #f99d39;
 	margin:0;
 }
