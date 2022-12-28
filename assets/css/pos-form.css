@@ -41,8 +41,8 @@
 	background-color: #ffffff;
 	line-height: 1.3em;
 	/*style="border:1px solid; height:694px; margin:2px; width:25%;"*/
-	height:694px; 
-	width:25%;
+	height: 694px; 
+	width: 25%;
 }
 
 .pos-box-input {
@@ -52,6 +52,7 @@
 	border-right:1px solid #cccccc;
 	border-bottom:1px solid #cccccc;
 	/*style="border:1px solid; height:694px; margin:2px; width:75%; display:flex;"*/
+	width: 75%;
 	display: flex;
 }
 
