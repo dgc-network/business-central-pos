@@ -13,6 +13,7 @@ if (!class_exists('sales_orders')) {
         }
 
         public function pos_form() {
+            $business_central = new business_central();
             $output = '<div class="pos-box">';
             $output .= '<div class="pos-box-content">';
             $output .= '<div class="pos-box-message-content">卡拉雞腿堡 x 1</div>';
@@ -25,7 +26,7 @@ if (!class_exists('sales_orders')) {
             $output .= '</div>';
             $output .= '<div class="pos-box-image">';
             $output .= '<img src="https://i.epochtimes.com/assets/uploads/2020/02/coffee-difference_317687987-600x400.jpg" alt="美式咖啡" width="100" height="100"/>';
-            $output .= '<div style="text-align:center; font-size:small;">美式咖啡</div>';
+            $output .= '<div style="text-align:center; font-size:small;">美式咖啡'.$business_central->getItems().'</div>';
             $output .= '</div>';
             $output .= '</div>';
             $output .= '</div>';
