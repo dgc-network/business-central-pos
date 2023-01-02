@@ -154,7 +154,7 @@ function web_services_sanitize_callback( $input ) {
     $output['is_open_ai_api_enabled']   = rest_sanitize_boolean( $input['is_open_ai_api_enabled'] );
     $output['open_ai_api_key']        = sanitize_text_field( $input['open_ai_api_key'] );
     $output['is_business_central_api_enabled']   = rest_sanitize_boolean( $input['is_business_central_api_enabled'] );
-    $output['business_central_token']    = sanitize_text_field( $input['business_central_token'] );
+    //$output['business_central_token']    = sanitize_text_field( $input['business_central_token'] );
     // ...
     return $output;
 }
