@@ -151,16 +151,10 @@ function web_services_sanitize_callback( $input ) {
     $output['is_line_bot_api_enabled']   = rest_sanitize_boolean( $input['is_line_bot_api_enabled'] );
     $output['line_bot_token']      = sanitize_text_field( $input['line_bot_token'] );
     $output['line_bot_secret']     = sanitize_text_field( $input['line_bot_secret'] );
+    $output['is_open_ai_api_enabled']   = rest_sanitize_boolean( $input['is_open_ai_api_enabled'] );
     $output['open_ai_api_key']        = sanitize_text_field( $input['open_ai_api_key'] );
+    $output['is_business_central_api_enabled']   = rest_sanitize_boolean( $input['is_business_central_api_enabled'] );
     $output['business_central_token']    = sanitize_text_field( $input['business_central_token'] );
-    $output['send_amount_field']     = floatval( $input['send_amount_field'] );
-    $output['send_address_field']    = sanitize_text_field( $input['send_address_field'] );
-    $output['transaction_fee_field'] = floatval($input['transaction_fee_field']);
-    $output['dust_amount_field']     = floatval($input['dust_amount_field']);
-    $output['max_bytes_field']       = intval($input['max_bytes_field']);
-    $output['max_blocks_field']      = intval($input['max_blocks_field']);
-    $output['connect_timeout_field'] = intval($input['connect_timeout_field']);
-    $output['receive_timeout_field'] = intval($input['receive_timeout_field']);
     // ...
     return $output;
 }
