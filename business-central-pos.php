@@ -43,9 +43,10 @@ function enqueue_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_scripts' );
 
+require_once plugin_dir_path( __FILE__ ) . 'web-services/setting.php';
 require_once plugin_dir_path( __FILE__ ) . 'includes/class-sales-orders.php';
 require_once plugin_dir_path( __FILE__ ) . 'includes/class-pos-customers.php';
-require_once plugin_dir_path( __FILE__ ) . 'web-services/business-central-api.php';
+//require_once plugin_dir_path( __FILE__ ) . 'web-services/business-central-api.php';
 /*
 require_once plugin_dir_path( __FILE__ ) . 'line-bot-api/line-bot-api.php';
 require_once plugin_dir_path( __FILE__ ) . 'includes/class-line-webhook.php';
