@@ -58,7 +58,7 @@ if (!function_exists('hash_equals')) {
     }
 }
 
-class LINEBotTiny {
+class line_bot_api {
 
     /** @var string */
     private $channelAccessToken;
@@ -81,11 +81,11 @@ class LINEBotTiny {
         if ($channelAccessToken==''||$channelSecret=='') {
             if (file_exists(dirname( __FILE__ ) . '/config.ini')) {
                 $config = parse_ini_file(dirname( __FILE__ ) . '/config.ini', true);
-                if ($config['Channel']['Token'] == null || $config['Channel']['Secret'] == null) {
+                if ($config['LineBot']['Token'] == null || $config['LineBot']['Secret'] == null) {
                     error_log("config.ini uncompleted!", 0);
                 } else {
-                    $channelAccessToken = $config['Channel']['Token'];
-                    $channelSecret = $config['Channel']['Secret'];
+                    $channelAccessToken = $config['LineBot']['Token'];
+                    $channelSecret = $config['LineBot']['Secret'];
                 }
             }    
         } 
