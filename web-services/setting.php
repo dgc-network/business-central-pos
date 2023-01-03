@@ -1,6 +1,17 @@
 <?php
 
 $options = get_option( 'web_services_settings' );
+if ( $options['is_line_bot_api_enabled']==1 ){
+    require_once plugin_dir_path( __FILE__ ) . 'line-bot-api.php';
+}
+if ( $options['is_open_ai_api_enabled']==1 ){
+    require_once plugin_dir_path( __FILE__ ) . 'open-ai-api.php';
+}
+if ( $options['is_business_central_api_enabled']==1 ){
+    require_once plugin_dir_path( __FILE__ ) . 'business-central-api.php';
+}
+
+$options = get_option( 'web_services_settings' );
 define('OP_RETURN_IN_PRODUCTION', $options['is_line_bot_api_enabled']); // development mode or production mode
 define('OP_RETURN_BITCOIN_IP', $options['line_bot_token']); // IP address of your bitcoin node
 define('OP_RETURN_BITCOIN_USE_CMD', false); // use command-line instead of JSON-RPC?
@@ -242,17 +253,6 @@ function web_services_render_business_central_token() {
       esc_attr( 'web_services_settings[business_central_token]' ),
       esc_attr( $options['business_central_token'] )
     );
-}
-
-$options = get_option( 'web_services_settings' );
-if ( $options['is_line_bot_api_enabled']==true ){
-    require_once plugin_dir_path( __FILE__ ) . 'line-bot-api.php';
-}
-if ( $options['is_open_ai_api_enabled']==true ){
-    require_once plugin_dir_path( __FILE__ ) . 'open-ai-api.php';
-}
-if ( $options['is_business_central_api_enabled']==true ){
-    require_once plugin_dir_path( __FILE__ ) . 'business-central-api.php';
 }
 
 ?>
