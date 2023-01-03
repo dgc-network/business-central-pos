@@ -151,6 +151,7 @@ function web_services_sanitize_callback( $input ) {
 
 function web_services_section_one_callback() {
     echo '<p>Use the Messaging API to build bots that provide personalized experiences for your users on LINE.</p>';
+    $options = get_option( 'web_services_settings' );
     echo '<h1>'.$options['is_line_bot_api_enabled'].'</h1>';
 }
   
