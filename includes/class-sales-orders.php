@@ -33,7 +33,7 @@ if (!class_exists('sales_orders')) {
             return $output;
         }
 
-        public function list_order_items() {
+        public function list_shopping_items() {
             global $wpdb;
             $curtain_agents = new curtain_agents();
             $curtain_categories = new curtain_categories();
@@ -405,7 +405,7 @@ if (!class_exists('sales_orders')) {
     }
     $my_class = new sales_orders();
     add_shortcode( 'pos-form', array( $my_class, 'pos_form' ) );
-    add_shortcode( 'order-item-list', array( $my_class, 'list_order_items' ) );
+    add_shortcode( 'order-item-list', array( $my_class, 'list_shopping_items' ) );
     add_action( 'wp_ajax_select_category_id', array( $my_class, 'select_category_id' ) );
     add_action( 'wp_ajax_nopriv_select_category_id', array( $my_class, 'select_category_id' ) );
 }
