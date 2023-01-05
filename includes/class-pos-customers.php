@@ -14,12 +14,12 @@ if (!class_exists('pos_customers')) {
 
         public function list_pos_customers() {
             global $wpdb;
-            //$service_options = new service_options();
+            //$option_pages = new option_pages();
             //$curtain_agents = new curtain_agents();
 
             if( isset($_SESSION['line_user_id']) ) {
                 $_option_page = 'Users';
-                $permission = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM {$wpdb->prefix}user_permissions WHERE line_user_id = %s AND service_option_id= %d", $_SESSION['line_user_id'], $service_options->get_id($_option_page) ), OBJECT );            
+                $permission = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM {$wpdb->prefix}user_permissions WHERE line_user_id = %s AND service_option_id= %d", $_SESSION['line_user_id'], $option_pages->get_id($_option_page) ), OBJECT );            
                 if (is_null($permission) || !empty($wpdb->last_error)) {
                     if ( $_GET['_check_permission'] != 'false' ) {
                         return 'You have not permission to access this page. Please check to the administrators.';
@@ -40,7 +40,7 @@ if (!class_exists('pos_customers')) {
                 $where['curtain_user_id']=$_POST['_curtain_user_id'];
                 $this->update_curtain_users($data, $where);
 
-                $results = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}service_options WHERE service_option_category LIKE '%admin%' OR service_option_category LIKE '%system%'", OBJECT );
+                $results = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}option_pages WHERE service_option_category LIKE '%admin%' OR service_option_category LIKE '%system%'", OBJECT );
                 foreach ($results as $index => $result) {
                     $_checkbox = '_checkbox'.$index;
                     if (isset($_POST[$_checkbox])) {
@@ -125,7 +125,7 @@ if (!class_exists('pos_customers')) {
                 $output .= '<input type="text" name="_mobile_phone" value="'.$row->mobile_phone.'" id="mobile-phone" class="text ui-widget-content ui-corner-all">';
                 $output .= '<label for="curtain-agent-id">Agent</label>';
                 $output .= '<select name="_curtain_agent_id">'.$curtain_agents->select_options($row->curtain_agent_id).'</select>';
-                $results = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}service_options WHERE service_option_category LIKE '%admin%' OR service_option_category LIKE '%system%' ", OBJECT );
+                $results = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}option_pages WHERE service_option_category LIKE '%admin%' OR service_option_category LIKE '%system%' ", OBJECT );
                 $output .= '<label for="user-permissions">Permissions</label>';
                 $output .= '<div style="border: 1px solid; padding: 10px;">';
                 foreach ($results as $index => $result) {
@@ -257,7 +257,7 @@ if (!class_exists('pos_customers')) {
 
         function send_chat() {
             $line_webhook = new line_webhook();
-            $service_options = new service_options();
+            $option_pages = new option_pages();
             //$curtain_users = new curtain_users();
 
             $data=array();
@@ -272,8 +272,8 @@ if (!class_exists('pos_customers')) {
             $body_messages[] = $_POST['message'];
             $_contents = array();
             $_contents['line_user_id'] = $_POST['to'];
-            //$_contents['link_uri'] = get_site_url().'/'.$service_options->get_link('_chat_form').'/?_id='.$_POST['to'];
-            $_contents['link_uri'] = get_site_url().'/'.$service_options->get_link('Users').'/?_id='.$_POST['to'];
+            //$_contents['link_uri'] = get_site_url().'/'.$option_pages->get_link('_chat_form').'/?_id='.$_POST['to'];
+            $_contents['link_uri'] = get_site_url().'/'.$option_pages->get_link('Users').'/?_id='.$_POST['to'];
             $_contents['hero_messages'] = $hero_messages;
             $_contents['body_messages'] = $body_messages;
             $line_webhook->push_flex_messages( $_contents );
