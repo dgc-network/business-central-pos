@@ -96,16 +96,16 @@ if (!class_exists('pos_customers')) {
             foreach ( $results as $index=>$result ) {
                 $output .= '<tr>';
                 $output .= '<td style="text-align: center;">';
-                $output .= '<span id="edit-btn-'.$result->curtain_user_id.'"><i class="fa-regular fa-pen-to-square"></i></span>';
+                $output .= '<span id="btn-edit-'.$result->curtain_user_id.'"><i class="fa-regular fa-pen-to-square"></i></span>';
                 $output .= '</td>';
                 $output .= '<td>'.$result->line_user_id.'</td>';
                 $output .= '<td>'.$result->display_name.'</td>';
                 $output .= '<td>'.$result->mobile_phone.'</td>';
                 $output .= '<td>'.wp_date( get_option('date_format'), $result->update_timestamp ).' '.wp_date( get_option('time_format'), $result->update_timestamp ).'</td>';
                 $output .= '<td style="text-align: center;">';
-                $output .= '<span id="chat-btn-'.$result->line_user_id.'"><i class="fa-solid fa-user-tie"></i></span>';
+                $output .= '<span id="btn-chat-'.$result->line_user_id.'"><i class="fa-solid fa-user-tie"></i></span>';
                 $output .= '<span>  </span>';
-                $output .= '<span id="del-btn-'.$result->curtain_user_id.'"><i class="fa-regular fa-trash-can"></i></span>';
+                $output .= '<span id="btn-del-'.$result->curtain_user_id.'"><i class="fa-regular fa-trash-can"></i></span>';
                 $output .= '</td>';
                 $output .= '</tr>';
             }
