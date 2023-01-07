@@ -85,17 +85,17 @@ jQuery(document).ready(function($) {
     });
     
     /* Cart Button */
-    $('[id^="btn-cart"]').mouseover(function() {
+    $('[id^="cart-btn"]').mouseover(function() {
         $(this).css('cursor', 'pointer');
         $(this).css('color', 'cornflowerblue');
     });
         
-    $('[id^="btn-cart"]').mouseout(function() {
+    $('[id^="cart-btn"]').mouseout(function() {
         $(this).css('cursor', 'default');
         $(this).css('color', 'black');
     });
         
-    $('[id^="btn-cart"]').on( "click", function() {
+    $('[id^="cart-btn"]').on( "click", function() {
         window.location.assign("orders")
     });
 
