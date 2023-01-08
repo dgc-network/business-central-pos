@@ -78,7 +78,7 @@ if (!class_exists('pos_customers')) {
             $output .= '<div style="text-align: right; margin: 5px;">';
             $output .= '<form method="post">';
             $output .= '<input style="display:inline" type="text" name="_where" placeholder="Search...">';
-            $output .= '<input style="display:inline" type="submit" value="Search" name="submit_action">';
+            $output .= '<input class="wp-block-button__link" type="submit" value="Search" name="submit_action">';
             $output .= '</form>';
             $output .= '</div>';
 
