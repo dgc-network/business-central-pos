@@ -266,16 +266,16 @@ if (!class_exists('pos_customers')) {
             $data['chat_message']= $_POST['message'];
             $line_webhook->insert_chat_message($data);
 
-            $hero_messages = array();
-            $hero_messages[] = $this->get_name($_POST['to']);
-            $body_messages = array();
-            $body_messages[] = $_POST['message'];
+            $hero = array();
+            $hero[] = $this->get_name($_POST['to']);
+            $body = array();
+            $body[] = $_POST['message'];
             $_contents = array();
             $_contents['line_user_id'] = $_POST['to'];
             //$_contents['link_uri'] = get_site_url().'/'.$wp_pages->get_link('_chat_form').'/?_id='.$_POST['to'];
             $_contents['link_uri'] = get_site_url().'/'.$wp_pages->get_link('Users').'/?_id='.$_POST['to'];
-            $_contents['hero_messages'] = $hero_messages;
-            $_contents['body_messages'] = $body_messages;
+            $_contents['hero'] = $hero;
+            $_contents['body'] = $body;
             $line_webhook->push_flex_messages( $_contents );
 
             $response = array();
