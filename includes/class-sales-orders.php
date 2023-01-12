@@ -355,7 +355,6 @@ if (!class_exists('sales_orders')) {
         
             $sql = "CREATE TABLE `{$wpdb->prefix}order_items` (
                 curtain_order_id int NOT NULL AUTO_INCREMENT,
-                order_master_id int(10),
                 order_number varchar(50),
                 curtain_agent_id int(10),
                 curtain_category_id int(10),
