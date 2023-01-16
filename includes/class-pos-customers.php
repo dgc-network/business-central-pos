@@ -254,7 +254,7 @@ if (!class_exists('pos_customers')) {
             $_contents['link_uri'] = get_site_url().'/'.$wp_pages->get_link('Users').'/?_id='.$_POST['to'];
             $_contents['hero'] = $hero;
             $_contents['body'] = $body;
-            $line_webhook->push_flex_messages( $_contents );
+            $wp_pages->push_bubble_messages( $_contents );
 
             $response = array();
             $response['currenttime'] = wp_date( get_option('time_format'), time() );
